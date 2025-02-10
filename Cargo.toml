@@ -1,0 +1,19 @@
+[package]
+name = "docker-dns-server"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-trait = "0.1.86"
+bollard = "0.18.1"
+futures-util = "0.3.31"
+hickory-server = "0.24.3"
+tokio = { version = "1", features = ["full"] }
+
+[profile.release]
+opt-level = "z"
+lto = "thin"
+debug = false
+strip = true
