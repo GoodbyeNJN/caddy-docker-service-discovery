@@ -49,7 +49,7 @@ static REGISTRY_LISTEN: LazyLock<Result<SocketAddr>> =
 static SELF_HOSTNAME: LazyLock<Result<Name>> =
     LazyLock::new(|| get_parsed_env(REGISTRY_HOSTNAME_ENV, None));
 static REGISTRY_URLS: LazyLock<Result<String>> =
-    LazyLock::new(|| get_parsed_env(REGISTRY_URLS_ENV, None));
+    LazyLock::new(|| get_parsed_env(REGISTRY_URLS_ENV, Some(Default::default())));
 
 pub struct Env {}
 
